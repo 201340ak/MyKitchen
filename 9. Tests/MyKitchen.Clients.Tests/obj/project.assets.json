@@ -2,6 +2,20 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.0": {
+      "JWT/3.10.0": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "9.0.1",
+          "System.Security.Cryptography.Csp": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/JWT.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/JWT.dll": {}
+        }
+      },
       "Libuv/1.10.0": {
         "type": "package",
         "dependencies": {
@@ -4632,7 +4646,7 @@
           "System.Threading": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {}
+          "ref/netstandard1.3/System.Security.Cryptography.Csp.dll": {}
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard1.3/System.Security.Cryptography.Csp.dll": {
@@ -5195,6 +5209,7 @@
         "framework": ".NETCoreApp,Version=v2.0",
         "dependencies": {
           "DataContracts": "1.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.0.0",
           "Microsoft.EntityFrameworkCore.Design": "2.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.0.0",
           "Microsoft.EntityFrameworkCore.Tools.DotNet": "2.0.0"
@@ -5211,7 +5226,9 @@
         "framework": ".NETCoreApp,Version=v2.0",
         "dependencies": {
           "DataContracts": "1.0.0",
+          "JWT": "3.10.0",
           "Microsoft.AspNetCore.All": "2.0.0",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "2.0.0",
           "Microsoft.NETCore.App": "2.0.0",
           "MyKitchen.Accessors": "1.0.0",
           "MyKitchen.Managers": "1.0.0"
@@ -5240,6 +5257,17 @@
     }
   },
   "libraries": {
+    "JWT/3.10.0": {
+      "sha512": "zuZxBs66UmRU/WH6qMsFcPUuNc2x2c1pXD6nv0I8iyrLRRPFsfHx/hq0sMHInuLoJKxl91fH16IFGO5rrKUx5w==",
+      "type": "package",
+      "path": "jwt/3.10.0",
+      "files": [
+        "jwt.3.10.0.nupkg.sha512",
+        "jwt.nuspec",
+        "lib/net462/JWT.dll",
+        "lib/netstandard1.3/JWT.dll"
+      ]
+    },
     "Libuv/1.10.0": {
       "sha512": "GsCf4q+eyaI49rCPlgYxdxa1SQCysXFFdSJWdstrwxytg4+VPYLYrXD4AT2rjHVJ+UF7SSWX9CapWEYaU4ejVQ==",
       "type": "package",
@@ -13629,11 +13657,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\al3238\\Desktop\\Stuff\\MyKitchen\\App\\9. Tests\\MyKitchen.Clients.Tests\\MyKitchen.Clients.Tests.csproj",
+      "projectUniqueName": "c:\\Users\\al3238\\Desktop\\Stuff\\MyKitchen\\App\\9. Tests\\MyKitchen.Clients.Tests\\MyKitchen.Clients.Tests.csproj",
       "projectName": "MyKitchen.Clients.Tests",
-      "projectPath": "C:\\Users\\al3238\\Desktop\\Stuff\\MyKitchen\\App\\9. Tests\\MyKitchen.Clients.Tests\\MyKitchen.Clients.Tests.csproj",
+      "projectPath": "c:\\Users\\al3238\\Desktop\\Stuff\\MyKitchen\\App\\9. Tests\\MyKitchen.Clients.Tests\\MyKitchen.Clients.Tests.csproj",
       "packagesPath": "C:\\Users\\al3238\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\al3238\\Desktop\\Stuff\\MyKitchen\\App\\9. Tests\\MyKitchen.Clients.Tests\\obj\\",
+      "outputPath": "c:\\Users\\al3238\\Desktop\\Stuff\\MyKitchen\\App\\9. Tests\\MyKitchen.Clients.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13654,14 +13682,14 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\al3238\\Desktop\\Stuff\\MyKitchen\\App\\4. Accessors\\MyKitchen.Accessors\\MyKitchen.Accessors.csproj": {
-              "projectPath": "C:\\Users\\al3238\\Desktop\\Stuff\\MyKitchen\\App\\4. Accessors\\MyKitchen.Accessors\\MyKitchen.Accessors.csproj"
+            "c:\\Users\\al3238\\Desktop\\Stuff\\MyKitchen\\App\\4. Accessors\\MyKitchen.Accessors\\MyKitchen.Accessors.csproj": {
+              "projectPath": "c:\\Users\\al3238\\Desktop\\Stuff\\MyKitchen\\App\\4. Accessors\\MyKitchen.Accessors\\MyKitchen.Accessors.csproj"
             },
-            "C:\\Users\\al3238\\Desktop\\Stuff\\MyKitchen\\App\\1. Clients\\MyKitchen.Client.WebApp\\MyKitchen.Client.WebApp.csproj": {
-              "projectPath": "C:\\Users\\al3238\\Desktop\\Stuff\\MyKitchen\\App\\1. Clients\\MyKitchen.Client.WebApp\\MyKitchen.Client.WebApp.csproj"
+            "c:\\Users\\al3238\\Desktop\\Stuff\\MyKitchen\\App\\1. Clients\\MyKitchen.Client.WebApp\\MyKitchen.Client.WebApp.csproj": {
+              "projectPath": "c:\\Users\\al3238\\Desktop\\Stuff\\MyKitchen\\App\\1. Clients\\MyKitchen.Client.WebApp\\MyKitchen.Client.WebApp.csproj"
             },
-            "C:\\Users\\al3238\\Desktop\\Stuff\\MyKitchen\\App\\2. Managers\\MyKitchen.Managers\\MyKitchen.Managers.csproj": {
-              "projectPath": "C:\\Users\\al3238\\Desktop\\Stuff\\MyKitchen\\App\\2. Managers\\MyKitchen.Managers\\MyKitchen.Managers.csproj"
+            "c:\\Users\\al3238\\Desktop\\Stuff\\MyKitchen\\App\\2. Managers\\MyKitchen.Managers\\MyKitchen.Managers.csproj": {
+              "projectPath": "c:\\Users\\al3238\\Desktop\\Stuff\\MyKitchen\\App\\2. Managers\\MyKitchen.Managers\\MyKitchen.Managers.csproj"
             }
           }
         }
