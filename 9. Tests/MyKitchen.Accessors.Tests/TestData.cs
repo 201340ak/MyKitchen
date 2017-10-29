@@ -34,7 +34,7 @@ namespace MyKitchen.Accessors.Tests
                 return new DataContracts.Food
                 {
                     Name = "Hamburger",
-                    UnitId = 1,
+                    Unit = Pounds,
                     ServingSize = 0.25M,
                     Calories = 260,
                     Price = 3.84M,

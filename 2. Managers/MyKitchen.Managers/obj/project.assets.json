@@ -5615,11 +5615,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\al3238\\Desktop\\Stuff\\MyKitchen\\App\\2. Managers\\MyKitchen.Managers\\MyKitchen.Managers.csproj",
+      "projectUniqueName": "c:\\Users\\al3238\\Desktop\\Stuff\\MyKitchen\\App\\2. Managers\\MyKitchen.Managers\\MyKitchen.Managers.csproj",
       "projectName": "MyKitchen.Managers",
-      "projectPath": "C:\\Users\\al3238\\Desktop\\Stuff\\MyKitchen\\App\\2. Managers\\MyKitchen.Managers\\MyKitchen.Managers.csproj",
+      "projectPath": "c:\\Users\\al3238\\Desktop\\Stuff\\MyKitchen\\App\\2. Managers\\MyKitchen.Managers\\MyKitchen.Managers.csproj",
       "packagesPath": "C:\\Users\\al3238\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\al3238\\Desktop\\Stuff\\MyKitchen\\App\\2. Managers\\MyKitchen.Managers\\obj\\",
+      "outputPath": "c:\\Users\\al3238\\Desktop\\Stuff\\MyKitchen\\App\\2. Managers\\MyKitchen.Managers\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5640,11 +5640,11 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\al3238\\Desktop\\Stuff\\MyKitchen\\App\\5. Shared\\DataContracts\\DataContracts.csproj": {
-              "projectPath": "C:\\Users\\al3238\\Desktop\\Stuff\\MyKitchen\\App\\5. Shared\\DataContracts\\DataContracts.csproj"
+            "c:\\Users\\al3238\\Desktop\\Stuff\\MyKitchen\\App\\5. Shared\\DataContracts\\DataContracts.csproj": {
+              "projectPath": "c:\\Users\\al3238\\Desktop\\Stuff\\MyKitchen\\App\\5. Shared\\DataContracts\\DataContracts.csproj"
             },
-            "C:\\Users\\al3238\\Desktop\\Stuff\\MyKitchen\\App\\4. Accessors\\MyKitchen.Accessors\\MyKitchen.Accessors.csproj": {
-              "projectPath": "C:\\Users\\al3238\\Desktop\\Stuff\\MyKitchen\\App\\4. Accessors\\MyKitchen.Accessors\\MyKitchen.Accessors.csproj"
+            "c:\\Users\\al3238\\Desktop\\Stuff\\MyKitchen\\App\\4. Accessors\\MyKitchen.Accessors\\MyKitchen.Accessors.csproj": {
+              "projectPath": "c:\\Users\\al3238\\Desktop\\Stuff\\MyKitchen\\App\\4. Accessors\\MyKitchen.Accessors\\MyKitchen.Accessors.csproj"
             }
           }
         }

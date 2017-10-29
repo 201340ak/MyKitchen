@@ -670,11 +670,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\al3238\\Desktop\\Stuff\\MyKitchen\\App\\5. Shared\\DataContracts\\DataContracts.csproj",
+      "projectUniqueName": "c:\\Users\\al3238\\Desktop\\Stuff\\MyKitchen\\App\\5. Shared\\DataContracts\\DataContracts.csproj",
       "projectName": "DataContracts",
-      "projectPath": "C:\\Users\\al3238\\Desktop\\Stuff\\MyKitchen\\App\\5. Shared\\DataContracts\\DataContracts.csproj",
+      "projectPath": "c:\\Users\\al3238\\Desktop\\Stuff\\MyKitchen\\App\\5. Shared\\DataContracts\\DataContracts.csproj",
       "packagesPath": "C:\\Users\\al3238\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\al3238\\Desktop\\Stuff\\MyKitchen\\App\\5. Shared\\DataContracts\\obj\\",
+      "outputPath": "c:\\Users\\al3238\\Desktop\\Stuff\\MyKitchen\\App\\5. Shared\\DataContracts\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -1,0 +1,12 @@
+C:\Users\al3238\Desktop\Stuff\MyKitchen\App\2. Managers\MyKitchen.Managers\bin\release\netcoreapp2.0\MyKitchen.Managers.deps.json
+C:\Users\al3238\Desktop\Stuff\MyKitchen\App\2. Managers\MyKitchen.Managers\bin\release\netcoreapp2.0\MyKitchen.Managers.dll
+C:\Users\al3238\Desktop\Stuff\MyKitchen\App\2. Managers\MyKitchen.Managers\bin\release\netcoreapp2.0\MyKitchen.Managers.pdb
+C:\Users\al3238\Desktop\Stuff\MyKitchen\App\2. Managers\MyKitchen.Managers\bin\release\netcoreapp2.0\DataContracts.dll
+C:\Users\al3238\Desktop\Stuff\MyKitchen\App\2. Managers\MyKitchen.Managers\bin\release\netcoreapp2.0\MyKitchen.Accessors.dll
+C:\Users\al3238\Desktop\Stuff\MyKitchen\App\2. Managers\MyKitchen.Managers\bin\release\netcoreapp2.0\DataContracts.pdb
+C:\Users\al3238\Desktop\Stuff\MyKitchen\App\2. Managers\MyKitchen.Managers\bin\release\netcoreapp2.0\MyKitchen.Accessors.pdb
+C:\Users\al3238\Desktop\Stuff\MyKitchen\App\2. Managers\MyKitchen.Managers\obj\release\netcoreapp2.0\MyKitchen.Managers.csproj.CoreCompileInputs.cache
+C:\Users\al3238\Desktop\Stuff\MyKitchen\App\2. Managers\MyKitchen.Managers\obj\release\netcoreapp2.0\MyKitchen.Managers.AssemblyInfoInputs.cache
+C:\Users\al3238\Desktop\Stuff\MyKitchen\App\2. Managers\MyKitchen.Managers\obj\release\netcoreapp2.0\MyKitchen.Managers.AssemblyInfo.cs
+C:\Users\al3238\Desktop\Stuff\MyKitchen\App\2. Managers\MyKitchen.Managers\obj\release\netcoreapp2.0\MyKitchen.Managers.dll
+C:\Users\al3238\Desktop\Stuff\MyKitchen\App\2. Managers\MyKitchen.Managers\obj\release\netcoreapp2.0\MyKitchen.Managers.pdb

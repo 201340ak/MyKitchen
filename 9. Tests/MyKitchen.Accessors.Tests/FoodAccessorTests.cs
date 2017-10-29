@@ -57,12 +57,11 @@ namespace MyKitchen.Accessors.Tests
         [TestMethod]
         public void GetFood_Integration()
         {
-            // Setup
-            var testFood = AddFoodToContextForMock(MyKicthenContext);
-
             // Act
             using(var context = MyKicthenContext)
             {
+                // Setup
+                var testFood = AddFoodToContextForMock(MyKicthenContext);
                 try
                 {
                     var accessor = new FoodAccessor(context);
@@ -118,9 +117,8 @@ namespace MyKitchen.Accessors.Tests
         [TestMethod]
         public void Update_Integration()
         {
-            // Setup
-            var testFood = AddFoodToContextForMock(MyKicthenContext);
-
+                // Setup
+                var testFood = AddFoodToContextForMock(MyKicthenContext);
             // Act
             using(var context = MyKicthenContext)
             {

@@ -66,6 +66,13 @@
     margin-bottom: 10px;
 }
 
+.add-recipe:enabled{
+    color: white;
+    background: #FFA500;
+    border: none;
+}
+
+
 @media (max-width: 767px) {
     /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */
     body {

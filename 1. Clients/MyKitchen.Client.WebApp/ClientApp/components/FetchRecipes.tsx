@@ -1,10 +1,13 @@
 import * as React from 'react';
 import { RouteComponentProps } from 'react-router';
+import * as e6p from "es6-promise";
+(e6p as any).polyfill();
 import 'isomorphic-fetch';
 
 interface FetchRecipeDataState{
     recipes: Recipe[];
     loading: boolean;
+    recipeToAdd?: Recipe;
 }
 
 export class FetchRecipes extends React.Component<RouteComponentProps<{}>, FetchRecipeDataState> {
@@ -26,13 +29,107 @@ export class FetchRecipes extends React.Component<RouteComponentProps<{}>, Fetch
             
         return <div>
             <h1>All Recipes</h1>
+            <br />
+            <button className="btn glyphicon glyphicon-plus add-recipe" name="add-recipe" onClick= { e => this.addRecipe() } />
+            <div className="addRecipeArea"></div>
             <p>This component demonstrates fetching data from the server.</p>
             { contents }
         </div>
     }
+
+    private async addRecipe()
+    {
+        // var recipeWasAdded = await this.postMethod();
+        // alert("Adding Recipe.." + recipeWasAdded);
+        // var isOne = await this.postMethod();
+        var isOne = await this.TryPost();
+        if(isOne === true)
+        {
+            alert("Worked!");
+        }
+        else
+        {
+            alert(":(");
+        }
+    }
+
+    private TryPost()
+    {
+        try
+        {
+            var numberBody = JSON.stringify({number: 1});
+            alert(numberBody);
+            var myHeaders = new Headers();
+            
+            myHeaders.append('Content-Type', 'application/json');
+            myHeaders.append('Accept', 'application/json');
+            // myHeaders.append('content-type', 'application/x-www-form-urlencoded; charset=utf-8');
+            // myHeaders.append('accept', 'application/json, application/xml, text/plain, text/html, *.*');
+        var response = fetch(
+            'api/Recipe/CheckIfNumberIsOne',
+            {
+                method: 'POST',
+                headers: myHeaders,
+                body: numberBody,
+            })
+            .then(response => response.json() as Promise<boolean>)
+            return response;
+        }
+        catch(e)
+        {
+            alert(e);
+        }
+    }
+
+    private async postMethod()
+    {
+        try
+        {
+            var numberBody = JSON.stringify(1);
+            this.setState({recipeToAdd: this.GetTestRecipe()});
+            var recipeToAddstringified = JSON.stringify(this.GetTestRecipe());
+            alert(recipeToAddstringified);
+            var myHeaders = new Headers();
+            
+            myHeaders.append('Content-Type', 'application/json');
+            var response = await fetch(
+                'api/Recipe/Add',
+                {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/x-www-form-urlencoded; charset=utf-8',
+                        'Accept': 'application/json, application/xml, text/plain, text/html, *.*'
+                      },
+                    body: numberBody, // this.state.recipeToAdd,
+                })
+                .then(response => response.json() as Promise<boolean>)
+                .then(data => {
+                    return data;
+                });
+                return response;
+        }
+        catch(error)
+        {
+            alert(error);
+        }
+    }
     
     private static renderRecipeCards(recipes: Recipe[]) {
         return <div>{ recipes.map(recipe => FetchRecipes.recipeCard(recipe)) }</div>;
+    }
+
+    private static addRecipeCard() 
+    {
+        return <div className="recipe-card">
+                <input></input>
+                <div className="row">
+                    <input className="recipe-description col-xs-12"></input>
+                </div>
+                <div className="row">
+                    {/* { FetchRecipes.recipeData(recipe) }
+                    { FetchRecipes.recipeFoods(recipe.recipeFoods) } */}
+                </div>
+            </div>;
     }
 
     private static recipeCard(recipe: Recipe) 
@@ -104,10 +201,44 @@ export class FetchRecipes extends React.Component<RouteComponentProps<{}>, Fetch
             </div>
         </li>
     }
+    
+    private GetTestRecipe()
+    {        
+        var unit: Unit = {
+            // id: 0,
+            name: "Apple",
+        };
+        var apple: Food = {
+            // id: 0,
+            name: "Apple",
+            unit: unit,
+            servingSize: 1,
+            calories: 10,
+            price: 1.00,
+            unitQuantityForPrice: 1.00
+        };
+        var foods: RecipeFood[] = [{
+            recipeId: 0,
+            foodId: 0,
+            food: apple,
+            quantity: 2
+        }]
+        var recipe: Recipe = {
+            // id: 0,
+            name: "First Recipe",
+            description: "Very first recipe",
+            preparationTime: 5,
+            cookTime: 20,
+            servings: 2,
+            deleted: false,
+            recipeFoods: foods
+        }
+        return recipe;
+    }
 }
 
 interface Recipe {
-    id: number;
+    // id: number;
     name: string;
     description: string;
     preparationTime: number;
@@ -125,7 +256,7 @@ interface RecipeFood {
 }
 
 interface Food {
-    id: number;
+    // id: number;
     name: string;
     unit: Unit;
     servingSize: number;
@@ -136,6 +267,6 @@ interface Food {
 }
 
 interface Unit {
-    id: number;
+    // id: number;
     name: string;
 }

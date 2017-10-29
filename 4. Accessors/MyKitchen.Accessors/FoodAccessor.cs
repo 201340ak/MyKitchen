@@ -20,7 +20,7 @@ namespace MyKitchen.Accessors
 
         public DataContracts.Food Add(DataContracts.Food food)
         {
-            var unitFromContext = MyKitchenDbContext.Units.FirstOrDefault(unit => unit.Id == food.UnitId);
+            var unitFromContext = MyKitchenDbContext.Units.FirstOrDefault(unit => unit.Id == food.Unit.Id);
             if(unitFromContext == null)
             {
                 // TODO: Decide how to actually handle this scenerio..

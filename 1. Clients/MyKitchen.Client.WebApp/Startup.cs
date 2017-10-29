@@ -49,7 +49,6 @@ namespace MyKitchen_Client_WebApp
             //     options.UseSqlServer(Configuration.GetConnectionString("MyKitchenDb")));
             services.AddDbContext<MyKitchen.Accessors.Contexts.MyKitchenDbContext>(options => 
                 options.UseInMemoryDatabase("MyKitchenDb"));
-
             services.AddScoped<MyKitchen.Managers.IRecipeManager, MyKitchen.Managers.RecipeManager>();
             services.AddScoped<MyKitchen.Accessors.IRecipeAccessor, MyKitchen.Accessors.RecipeAccessor>();
             
@@ -59,7 +58,7 @@ namespace MyKitchen_Client_WebApp
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, MyKitchenDbContext context)
         {
             if (env.IsDevelopment())
             {
@@ -89,6 +88,8 @@ namespace MyKitchen_Client_WebApp
                     name: "spa-fallback",
                     defaults: new { controller = "Home", action = "Index" });
             });
+
+            MyKitchenDbInitializer.Initialize(context);
         }
 
         private TokenValidationParameters GetJwtTokenValidationParameters()

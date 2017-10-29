@@ -69,6 +69,11 @@ namespace MyKitchen.Accessors.Tests
                     Assert.IsNotNull(getInventory);
                     Assert.AreEqual(1, getInventory.Foods.Count);
                 }
+                catch (Exception e)
+                {
+                    context.Database.EnsureDeleted();
+                    throw e;
+                }
             }
         }
 
@@ -78,11 +83,11 @@ namespace MyKitchen.Accessors.Tests
             {
                 var testList = TestData.UserOneInventory;    
                 var hamburger = TestData.Hamburger;
-                var food = context.Food.Add((Entities.Food)hamburger).Entity;
+                // var food = context.Food.Add((Entities.Food)hamburger).Entity;
                 context.SaveChanges();
                 testList.Foods = new List<DataContracts.Food>
                 {
-                    (DataContracts.Food)food
+                    hamburger
                 };
                 
                 var addedList = context.Lists.Add((Entities.Inventory)testList).Entity as Entities.Inventory;

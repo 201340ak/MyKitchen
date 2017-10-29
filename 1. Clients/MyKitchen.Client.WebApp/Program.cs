@@ -7,6 +7,8 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.DependencyInjection;
+using MyKitchen.Accessors.Contexts;
 
 namespace MyKitchen_Client_WebApp
 {
@@ -18,7 +20,7 @@ namespace MyKitchen_Client_WebApp
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("hosting.json", optional: true)
                 .Build();
-                
+
             BuildWebHost(args, config).Run();
         }
 

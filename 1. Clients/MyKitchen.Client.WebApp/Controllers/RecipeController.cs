@@ -27,5 +27,26 @@ namespace MyKitchen_Client_WebApp.Controllers
         {
             return Manager.GetAll();
         }
+
+        [HttpPost("[action]")]
+        public bool Add(int number)
+        {
+            try
+            {
+                return number == 1;
+                // var addedRecipe = Manager.Add(recipe);
+                // return true;
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+        }
+
+        [HttpPost("[action]")]
+        public bool CheckIfNumberIsOne(int number)
+        {
+            return number == 1;
+        }
     }
 }

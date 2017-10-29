@@ -13,6 +13,7 @@ namespace MyKitchen.Accessors.Entities
 
             return new DataContracts.Unit
             {
+                Id = entity.Id,
                 Name = entity.Name
             };
         }
@@ -26,6 +27,7 @@ namespace MyKitchen.Accessors.Entities
 
             return new Unit
             {
+                Id = entity.Id,
                 Name = entity.Name
             };
         }
