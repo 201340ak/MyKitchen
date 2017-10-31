@@ -48,7 +48,7 @@ namespace MyKitchen.Clients.Tests
                 var manager = new RecipeManager(accessor);
 
                 using(var controller = new RecipeController(manager)){
-                    var recipeAdded = controller.Add(1); //TestRecipe);
+                    var recipeAdded = controller.Add(TestRecipe);
                     Assert.IsNotNull(recipeAdded);
                     Assert.IsTrue(recipeAdded);
                 }

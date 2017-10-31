@@ -52,6 +52,7 @@ namespace MyKitchen_Client_WebApp
             services.AddScoped<MyKitchen.Managers.IRecipeManager, MyKitchen.Managers.RecipeManager>();
             services.AddScoped<MyKitchen.Accessors.IRecipeAccessor, MyKitchen.Accessors.RecipeAccessor>();
             
+            services.AddScoped<MyKitchen.Managers.IFoodManager, MyKitchen.Managers.FoodManager>();
             services.AddScoped<MyKitchen.Accessors.IFoodAccessor, MyKitchen.Accessors.FoodAccessor>();
 
             services.AddMvc();

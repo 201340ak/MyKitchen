@@ -35,6 +35,24 @@
     padding-top: 0px;
 }
 
+.add-recipe-card{
+    border: .5px solid blue;
+    margin-top: 5px;
+    border-radius: 5px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 0px;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+.add-recipe-card > input, .add-recipe-card > textarea
+{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
 .recipe-card:hover{
     border: .5px solid #FFA500;
     box-shadow: 3px 3px 2px 0px lightgray;

@@ -85,7 +85,8 @@ namespace MyKitchen.Accessors
                 if(foodFromContext == null)
                 {
                     // TODO: Decide how to actually handle this scenerio..
-                    throw new Exception($"Food {recipeFood?.Food?.Name} with id {recipeFood.FoodId} does not exist. Please use existing Food Item");
+                    MyKitchenDbContext.Food.Add(recipeFood.Food);
+                    // throw new Exception($"Food {recipeFood?.Food?.Name} with id {recipeFood.FoodId} does not exist. Please use existing Food Item");
                 }
 
                 recipeFood.Food = foodFromContext;

@@ -11,29 +11,29 @@ using MyKitchen.Accessors.Contexts;
 namespace MyKitchen_Client_WebApp.Controllers
 {
     [Route("api/[controller]")]
-    public class RecipeController : Controller
+    public class FoodController : Controller
     {
 
-        public RecipeController(IRecipeManager manager)
+        public FoodController(IFoodManager manager)
         {
             Manager = manager ?? throw new ArgumentNullException(nameof(manager));
         }
 
-        private IRecipeManager Manager { get; }
+        private IFoodManager Manager { get; }
 
 
         [HttpGet("[action]")]
-        public IEnumerable<Recipe> GetAll()
+        public IEnumerable<Food> GetAll()
         {
             return Manager.GetAll();
         }
 
         [HttpPost("[action]")]
-        public bool Add([FromBody] Recipe recipe)
+        public bool Add([FromBody] Food food)
         {
             try
             {
-                var addedRecipe = Manager.Add(recipe);
+                var addedFood = Manager.Add(food);
                 return true;
             }
             catch(Exception e)
