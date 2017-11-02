@@ -25,7 +25,8 @@ namespace MyKitchen_Client_WebApp.Controllers
         [HttpGet("[action]")]
         public IEnumerable<Recipe> GetAll()
         {
-            return Manager.GetAll();
+            var recipes = Manager.GetAll().OrderByDescending(recipe => recipe.Id);
+            return recipes;
         }
 
         [HttpPost("[action]")]
@@ -34,6 +35,20 @@ namespace MyKitchen_Client_WebApp.Controllers
             try
             {
                 var addedRecipe = Manager.Add(recipe);
+                return true;
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+        }
+
+        [HttpDelete("[action]")]
+        public bool Delete([FromBody] int recipeId)
+        {
+            try
+            {
+                var deletedRecipe = Manager.Delete(recipeId);
                 return true;
             }
             catch(Exception e)

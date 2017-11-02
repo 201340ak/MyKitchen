@@ -23,21 +23,8 @@
     display: block;
 }
 
-.recipe-card{
-    margin-top: 5px;
-    border-radius: 5px;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 0px;
-    border: .5px solid lightgray;
-    padding: 5px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 0px;
-}
-
-.add-recipe-card{
-    border: .5px solid blue;
-    margin-top: 5px;
+.add-recipe-card, .recipe-card{
+    margin-top: 10px;
     border-radius: 5px;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 0px;
@@ -45,15 +32,30 @@
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 10px;
+    padding-bottom: 10px;
 }
 
-.add-recipe-card > input, .add-recipe-card > textarea
+.recipe-card{
+    border: .5px solid lightgray;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+h3.recipe-title{
+    color: #FFA500;
+    font-weight: bolder;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.add-recipe-card > input, .add-recipe-card > textarea,
+.recipe-prep-time, .recipe-cook-time, .recipe-servings
 {
     margin-top: 5px;
     margin-bottom: 5px;
 }
 
-.recipe-card:hover{
+.recipe-card:hover, .add-recipe-card{
     border: .5px solid #FFA500;
     box-shadow: 3px 3px 2px 0px lightgray;
 }
@@ -90,6 +92,30 @@
     border: none;
 }
 
+button#save-recipe{
+    background: #00BDFF; 
+    color: white;
+    margin-left: 5px;
+}
+
+button#cancel-recipe{
+    background: #FF0067;
+    color: white;
+    margin-left: 5px;
+}
+
+button#cancel-recipe:hover, button#save-recipe:hover{
+    background: #FFA500;
+}
+
+button.remove-recipe{
+    background: #FF0067;
+    color: white;
+}
+
+ul{
+    list-style: none;
+}
 
 @media (max-width: 767px) {
     /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */

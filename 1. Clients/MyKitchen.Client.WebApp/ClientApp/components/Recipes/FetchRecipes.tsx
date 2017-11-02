@@ -1,25 +1,34 @@
+import { DeleteRecipe } from './RemoveRecipe';
 import * as React from 'react';
 import { RouteComponentProps } from 'react-router';
-import * as e6p from "es6-promise";
+import * as e6p from 'es6-promise';
 (e6p as any).polyfill();
 import 'isomorphic-fetch';
 import { Recipe, RecipeFood } from "../MyKitchenInterfaces";
+import { MainRecipeComponent } from "./MainRecipeComponent";
 
-export function RenderRecipeCards(recipes: Recipe[]) {
-    return <div>{ recipes.map(recipe => GetRecipeCard(recipe)) }</div>;
+export function RenderRecipeCards(recipes: Recipe[], component: MainRecipeComponent) {
+    return <div>{ recipes.map(recipe => GetRecipeCard(recipe, component)) }</div>;
 }
 
-export async function GetAllRecipes()
+export async function GetAllRecipes(component: MainRecipeComponent)
 {    
     var recipes = await fetch('api/Recipe/GetAll')
     .then(response => response.json() as Promise<Recipe[]>);
+    component.setState({recipes: recipes});
     return recipes;
 }
 
-function GetRecipeCard(recipe: Recipe) 
+function GetRecipeCard(recipe: Recipe, component: MainRecipeComponent) 
 {
+    var id = recipe.id == null ? 0 : recipe.id
     return <div className="recipe-card">
-            <h3>{ recipe.name }</h3>
+            <div className="row">
+                <h3 className="recipe-title col-xs-10">{ recipe.name }</h3>
+                <div className="col-xs-2">
+                    <button className="btn glyphicon glyphicon-remove remove-recipe pull-right" onClick={ e => DeleteRecipe(component, recipe.id) } />
+                </div>
+            </div>
             <div className="row">
                 <text className="recipe-description col-xs-12">{ recipe.description }</text>
             </div>
