@@ -5,7 +5,7 @@ import 'isomorphic-fetch';
 import { Recipe, Food, RecipeFood } from "../MyKitchenInterfaces";
 import { MainRecipeComponent } from "./MainRecipeComponent";
 import { GetAllRecipes } from "./FetchRecipes";
-import { RenderFoodList } from "../Food/FetchFood";
+import { RenderAddFoodToRecipeComponent } from "../Food/FetchFood";
 
 
 export function CloseAddRecipeCard(component: MainRecipeComponent)
@@ -42,7 +42,7 @@ export function AddRecipeCard(component: MainRecipeComponent)
 {        
     let foods = component.state.loading
         ? <p><em>Loading Foods...</em></p>
-        : RenderFoodList(component.state.allFood, component);
+        : RenderAddFoodToRecipeComponent(component.state.allFood, component);
 
     var recipeCard = <div className="add-recipe-card form-group">
             <input className="recipe-title form-control" placeholder="Title of Recipe" onChange={ e => UpdateRecipeTitle(e, component)} />
