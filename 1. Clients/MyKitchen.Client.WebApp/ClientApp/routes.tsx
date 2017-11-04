@@ -1,4 +1,4 @@
-import { DynamicListComponent } from './components/AddRecipeCard';
+import { DynamicListComponent } from './components/DynamicListComponent';
 import * as React from 'react';
 import { Route } from 'react-router-dom';
 import { Layout } from './components/Layout';
