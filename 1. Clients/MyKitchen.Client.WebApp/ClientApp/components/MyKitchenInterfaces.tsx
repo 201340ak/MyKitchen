@@ -14,6 +14,7 @@ export interface RecipeFood {
     foodId?: number;
     food?: Food;
     quantity?: number;
+    unit?: Unit;
 };
 
 export interface Food {

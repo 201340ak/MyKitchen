@@ -28,6 +28,12 @@ namespace MyKitchen_Client_WebApp.Controllers
             return Manager.GetAll();
         }
 
+        [HttpGet("[action]")]
+        public Food GetById([FromBody] int id)
+        {
+            return Manager.Get(id);
+        }
+
         [HttpPost("[action]")]
         public bool Add([FromBody] Food food)
         {

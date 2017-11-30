@@ -86,10 +86,21 @@ h3.recipe-title{
     margin-bottom: 10px;
 }
 
+.quantity-input-container
+{
+    padding-left: 0;
+    padding-right: 1;
+}
+
 .add-recipe:enabled{
     color: white;
     background: #FFA500;
     border: none;
+}
+
+.add-recipe-btn-container
+{
+    margin-top: 10px;;
 }
 
 button#save-recipe{

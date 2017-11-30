@@ -81,6 +81,7 @@ namespace MyKitchen.Accessors
 
             foreach(Entities.Ingredient recipeFood in recipeFoods)
             {
+                var foodId = recipeFood.FoodId != 0 ? recipeFood.FoodId : recipeFood.Food.Id;
                 var foodFromContext = recipeFood?.FoodId != null ? MyKitchenDbContext.Food.FirstOrDefault(food => food.Id == recipeFood.FoodId) : null;
                 if(foodFromContext == null)
                 {
