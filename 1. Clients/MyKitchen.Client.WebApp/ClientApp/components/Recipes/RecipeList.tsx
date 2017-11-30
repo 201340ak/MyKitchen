@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { RouteComponentProps } from 'react-router';
 import 'isomorphic-fetch';
-import { Recipe, Food, RecipeFood } from "../MyKitchenInterfaces";
+import { Recipe, Food, Ingredient } from "../MyKitchenInterfaces";
 import * as $ from 'jquery';
 
 interface RecipeListState
@@ -62,7 +62,7 @@ export class RecipeListComponent extends React.Component<RouteComponentProps<{}>
                 </div>
                 <div className="row">
                     { this.GetRecipeData(recipe) }
-                    { this.GetRecipeFoodList(recipe.ingredients!) }
+                    { this.GetIngredientList(recipe.ingredients!) }
                 </div>
             </div>
     }
@@ -103,22 +103,22 @@ export class RecipeListComponent extends React.Component<RouteComponentProps<{}>
         </ul>
     }
 
-    private GetRecipeFoodList(recipeFoods: RecipeFood[])
+    private GetIngredientList(ingredients: Ingredient[])
     {
-        return <ul className="recipe-food col-sm-6">
-            { recipeFoods.map(recipeFood => this.GetRecipeFoodListItem(recipeFood))}
+        return <ul className="ingredient col-sm-6">
+            { ingredients.map(ingredient => this.GetIngredientListItem(ingredient))}
         </ul>
     }
 
-    private GetRecipeFoodListItem(recipeFood: RecipeFood) 
+    private GetIngredientListItem(ingredient: Ingredient) 
     {
         return <li>
             <div className="row">
-                <div className="col-sm-6 col-xs-12 recipe-food-name">
-                    { recipeFood.food!.name }
+                <div className="col-sm-6 col-xs-12 ingredient-name">
+                    { ingredient.food!.name }
                 </div>
-                <div className="col-sm-6 col-xs-12 recipe-food-quantity">
-                    { recipeFood.quantity } { recipeFood.food!.unit!.name }
+                <div className="col-sm-6 col-xs-12 ingredient-quantity">
+                    { ingredient.quantity } { ingredient.unit!.name }
                 </div>
             </div>
         </li>

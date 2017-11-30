@@ -28,8 +28,13 @@ namespace MyKitchen.Accessors.Tests
                     var unit = context.Units.Add((Entities.Unit)TestData.Pounds).Entity;
                     context.SaveChanges();
 
+                    var unitList = new List<DataContracts.Unit>()
+                    {
+                        (DataContracts.Unit)unit
+                    };
+
                     var testFood = TestData.Hamburger;
-                    testFood.Unit = (DataContracts.Unit)unit;
+                    testFood.Units = unitList;
                     var hamburger = context.Food.Add((Entities.Food)testFood).Entity;
                     context.SaveChanges();
 
@@ -196,8 +201,13 @@ namespace MyKitchen.Accessors.Tests
                 var unit = context.Units.Add((Entities.Unit)TestData.Pounds).Entity;
                 context.SaveChanges();
 
+                var unitList = new List<DataContracts.Unit>()
+                {
+                    (DataContracts.Unit)unit
+                };
+
                 var testFood = TestData.Hamburger;
-                testFood.Unit = (DataContracts.Unit)unit;
+                testFood.Units = unitList;
                 var hamburger = context.Food.Add((Entities.Food)testFood).Entity;
                 context.SaveChanges();
 

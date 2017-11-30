@@ -25,8 +25,10 @@ namespace MyKitchen.Accessors.Entities
                 RecipeId = entity.RecipeId,
                 Recipe = (DataContracts.Recipe)entity.Recipe,
                 FoodId = entity.FoodId,
+                UnitId = entity.UnitId,
                 Food = (DataContracts.Food)entity.Food,
-                Quantity = entity.Quantity
+                Quantity = entity.Quantity,
+                Unit = (DataContracts.Unit)entity.Unit
             };
         }
 
@@ -53,8 +55,10 @@ namespace MyKitchen.Accessors.Entities
                 RecipeId = entity.RecipeId,
                 Recipe = (Recipe)entity.Recipe,
                 FoodId = entity.FoodId,
+                UnitId = entity.UnitId,
                 Food = (Food)entity.Food,
-                Quantity = entity.Quantity
+                Quantity = entity.Quantity,
+                Unit = (Unit)entity.Unit
             };
         }
     }

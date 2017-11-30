@@ -5,6 +5,7 @@ namespace MyKitchen.Accessors.Tests
     using Microsoft.EntityFrameworkCore;
     using Contexts;
     using System;
+    using System.Collections.Generic;
 
     [TestClass]
     public class FoodAccessorTests
@@ -27,7 +28,13 @@ namespace MyKitchen.Accessors.Tests
                     var unit = context.Units.Add((Entities.Unit)TestData.Pounds).Entity;
 
                     context.SaveChanges();
-                    hamburger.Unit = (DataContracts.Unit)unit;
+
+                    var unitList = new List<DataContracts.Unit>()
+                    {
+                        (DataContracts.Unit)unit
+                    };
+
+                    hamburger.Units = unitList;
                     var accessor = new FoodAccessor(context);
                     
                     // Act
@@ -35,11 +42,10 @@ namespace MyKitchen.Accessors.Tests
 
                     // Assert
                     Assert.AreEqual(hamburger.Name, addedFood.Name);
-                    Assert.AreEqual(hamburger.Unit.Name, addedFood.Unit.Name);
+                    Assert.AreEqual(hamburger.Units.First().Name, addedFood.Units.First().Name);
                     Assert.AreEqual(hamburger.ServingSize, addedFood.ServingSize);
                     Assert.AreEqual(hamburger.Calories, addedFood.Calories);
                     Assert.AreEqual(hamburger.Price, addedFood.Price);
-                    Assert.AreEqual(hamburger.UnitQuantityForPrice, addedFood.UnitQuantityForPrice);
 
                     // Clean up
                     context.Database.EnsureDeleted();
@@ -70,11 +76,10 @@ namespace MyKitchen.Accessors.Tests
                     //Assert
                     Assert.IsNotNull(getFood);
                     Assert.AreEqual(testFood.Name, getFood.Name);
-                    Assert.AreEqual(testFood.Unit.Name, getFood.Unit.Name);
+                    Assert.AreEqual(testFood.Units.First().Name, getFood.Units.First().Name);
                     Assert.AreEqual(testFood.ServingSize, getFood.ServingSize);
                     Assert.AreEqual(testFood.Calories, getFood.Calories);
                     Assert.AreEqual(testFood.Price, getFood.Price);
-                    Assert.AreEqual(testFood.UnitQuantityForPrice, getFood.UnitQuantityForPrice);
 
                     // Clean up
                     context.Database.EnsureDeleted();
@@ -150,8 +155,12 @@ namespace MyKitchen.Accessors.Tests
                 var hamburger = TestData.Hamburger;
                 var unit = context.Units.Add((Entities.Unit)TestData.Pounds).Entity;
 
+                var unitList = new List<DataContracts.Unit>()
+                {
+                    (DataContracts.Unit)unit
+                };
                 context.SaveChanges();
-                hamburger.Unit = (DataContracts.Unit)unit;
+                hamburger.Units = unitList;
                 var accessor = new FoodAccessor(context);
                 return accessor.Add(hamburger);
             }

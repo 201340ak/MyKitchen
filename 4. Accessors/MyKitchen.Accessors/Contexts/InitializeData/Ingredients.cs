@@ -24,25 +24,29 @@ namespace MyKitchen.Accessors.Contexts.InitializeData
                     {
                         RecipeId = 1, // Runza
                         FoodId = 1, // Hamburger
-                        Quantity = 1
+                        Quantity = 1,
+                        UnitId = 1 // Pounds
                     },
                     new Ingredient
                     {
                         RecipeId = 1, // Runza
                         FoodId = 2, // Crescent Rolls
-                        Quantity = 8
+                        Quantity = 8,
+                        UnitId = 2 // Rolls
                     },
                     new Ingredient
                     {
                         RecipeId = 1, // Runza
                         FoodId = 3, // BBQ Sauce
-                        Quantity = 3
+                        Quantity = 3,
+                        UnitId = 3 // Ounces
                     },
                     new Ingredient
                     {
                         RecipeId = 1, // Runza
                         FoodId = 4, // Red Onion
-                        Quantity = 0.25M
+                        Quantity = 0.25M,
+                        UnitId = 3, //Ounces 
                     }                    
                 };
             }

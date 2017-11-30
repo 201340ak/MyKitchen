@@ -34,11 +34,10 @@ namespace MyKitchen.Managers.Tests
                 return new DataContracts.Food
                 {
                     Name = "Hamburger",
-                    Unit = Pounds,
+                    Units = new List<DataContracts.Unit> {Pounds},
                     ServingSize = 0.25M,
                     Calories = 260,
-                    Price = 3.84M,
-                    UnitQuantityForPrice = 1
+                    Price = 3.84M
                 };
             }
         }

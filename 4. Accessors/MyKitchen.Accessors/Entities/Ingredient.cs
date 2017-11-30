@@ -13,7 +13,11 @@ namespace MyKitchen.Accessors.Entities
 
        public int FoodId { get; set; }
 
+       public int UnitId  {get; set; }
+
        public decimal Quantity { get; set; }
+
+       public virtual Unit Unit { get; set; }
 
        public virtual Recipe Recipe { get; set; }
 

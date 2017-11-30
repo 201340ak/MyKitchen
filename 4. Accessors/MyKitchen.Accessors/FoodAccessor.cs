@@ -20,13 +20,16 @@ namespace MyKitchen.Accessors
 
         public DataContracts.Food Add(DataContracts.Food food)
         {
-            var unitFromContext = MyKitchenDbContext.Units.FirstOrDefault(unit => unit.Id == food.Unit.Id);
-            if(unitFromContext == null)
+            var unitsFromContext = MyKitchenDbContext.Units.SelectMany(unitFormContext => food.Units.Where(unit => unitFormContext.Id == unit.Id).Select(unit => (Entities.Unit)unit));
+            foreach(var unitFromContext in unitsFromContext)
             {
-                // TODO: Decide how to actually handle this scenerio..
-                throw new Exception($"Unit {food.Unit?.Name} with id {food.UnitId} does not exist. Please use existing Unit");
+                if(unitFromContext == null)
+                {
+                    // TODO: Decide how to actually handle this scenerio..
+                    throw new Exception($"Unit not found..");
+                }
             }
-            food.Unit = (DataContracts.Unit)unitFromContext;
+            food.Units = unitsFromContext.Select(u => (DataContracts.Unit)u).ToList();
             var addedFood = MyKitchenDbContext.Food.Add((Entities.Food)food).Entity;
             MyKitchenDbContext.SaveChanges();
             return (DataContracts.Food)addedFood;
@@ -35,7 +38,7 @@ namespace MyKitchen.Accessors
         public DataContracts.Food Get(int foodId)
         {
             var gotFood = MyKitchenDbContext.Food
-            .Include(f => f.Unit)
+            .Include(f => f.Units)
             .FirstOrDefault(f => f.Id == foodId);
 
             MyKitchenDbContext.Entry(gotFood)
@@ -48,7 +51,7 @@ namespace MyKitchen.Accessors
         public List<DataContracts.Food> GetAll()
         {
             var foods = MyKitchenDbContext.Food
-            .Include(f => f.Unit);
+            .Include(f => f.Units);
 
             foreach(Entities.Food food in foods)
             {

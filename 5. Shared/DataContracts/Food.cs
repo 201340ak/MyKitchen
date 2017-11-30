@@ -7,11 +7,7 @@ namespace MyKitchen.DataContracts
     {
         public int Id { get; set; }
 
-        public int UnitId { get; set; }
-
         public string Name { get; set; }
-
-        public Unit Unit { get; set; }
 
         public decimal ServingSize { get; set; }
 
@@ -19,7 +15,7 @@ namespace MyKitchen.DataContracts
 
         public decimal Price { get; set; }
 
-        public decimal UnitQuantityForPrice { get; set; }
+        public ICollection<Unit> Units { get; set; }
 
        public ICollection<Ingredient> Ingredients { get; set; }
     }

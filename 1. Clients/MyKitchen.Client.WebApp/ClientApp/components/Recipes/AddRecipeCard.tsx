@@ -2,7 +2,7 @@ import { FoodListComponent, FoodQuantity } from '../DynamicListComponent';
 import * as React from 'react';
 import { RouteComponentProps } from 'react-router';
 import 'isomorphic-fetch';
-import { Recipe, Food, RecipeFood } from "../MyKitchenInterfaces";
+import { Recipe, Food, Ingredient } from "../MyKitchenInterfaces";
 
 interface AddRecipeCardState{
     recipeToAdd: Recipe;
@@ -37,15 +37,15 @@ export class AddRecipeCardComponent extends React.Component<RouteComponentProps<
 
     private GetSelectedFoodsCallBack(selectedFoods: FoodQuantity[])
     {
-        var recipeFoods: RecipeFood[] = selectedFoods.map(foodQuantity => {
+        var ingredient: Ingredient[] = selectedFoods.map(foodQuantity => {
             return {
                 foodId: foodQuantity.food.id,
                 food: foodQuantity.food,
                 quantity: foodQuantity.quantity
-            } as RecipeFood;
+            } as Ingredient;
         });
         var recipeToAdd = this.state.recipeToAdd;
-        recipeToAdd.ingredients = recipeFoods;
+        recipeToAdd.ingredients = ingredient;
         this.setState({recipeToAdd: recipeToAdd});
     }
 

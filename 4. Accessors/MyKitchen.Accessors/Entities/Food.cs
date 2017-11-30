@@ -21,7 +21,7 @@ namespace MyKitchen.Accessors.Entities
 
         public decimal UnitQuantityForPrice { get; set; }
 
-        public virtual Unit Unit { get; set; }
+        public virtual ICollection<Unit> Units { get; set; }
 
        public virtual ICollection<Ingredient> Ingredients { get; set; }
     }

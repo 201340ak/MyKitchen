@@ -34,11 +34,10 @@ namespace MyKitchen.Accessors.Tests
                 return new DataContracts.Food
                 {
                     Name = "Hamburger",
-                    Unit = Pounds,
+                    Units = new List<DataContracts.Unit> {Pounds},
                     ServingSize = 0.25M,
                     Calories = 260,
-                    Price = 3.84M,
-                    UnitQuantityForPrice = 1
+                    Price = 3.84M
                 };
             }
         }
@@ -50,11 +49,10 @@ namespace MyKitchen.Accessors.Tests
                 return new DataContracts.Food
                 {
                     Name = "Pillsbury Crescent Rolls",
-                    Unit = Rolls,
+                    Units = new List<DataContracts.Unit> {Rolls},
                     ServingSize = 0.25M,
                     Calories = 100,
-                    Price = 2.18M,
-                    UnitQuantityForPrice = 8
+                    Price = 2.18M
                 };
             }
         }
@@ -66,11 +64,10 @@ namespace MyKitchen.Accessors.Tests
                 return new DataContracts.Food
                 {
                     Name = "BBQ Sauce",
-                    Unit = Ounces,
+                    Units = new List<DataContracts.Unit> {Ounces},
                     ServingSize = 1M,
                     Calories = 54,
-                    Price = 2.64M,
-                    UnitQuantityForPrice = 28
+                    Price = 2.64M
                 };
             }
         }
@@ -82,11 +79,10 @@ namespace MyKitchen.Accessors.Tests
                 return new DataContracts.Food
                 {
                     Name = "Red Onion",
-                    Unit = Ounces,
+                    Units = new List<DataContracts.Unit> {Ounces},
                     ServingSize = 5M,
                     Calories = 64,
-                    Price = 1.32M,
-                    UnitQuantityForPrice = 0.3125M
+                    Price = 1.32M
                 };
             }
         }
@@ -98,11 +94,10 @@ namespace MyKitchen.Accessors.Tests
                 return new DataContracts.Food
                 {
                     Name = "Frozen French Fries",
-                    Unit = Ounces,
+                    Units = new List<DataContracts.Unit> {Ounces},
                     ServingSize = 3M,
                     Calories = 130,
-                    Price = 2.89M,
-                    UnitQuantityForPrice = 30M
+                    Price = 2.89M
                 };
             }
         }
@@ -114,11 +109,10 @@ namespace MyKitchen.Accessors.Tests
                 return new DataContracts.Food
                 {
                     Name = "Cola",
-                    Unit = Cans,
+                    Units = new List<DataContracts.Unit> {Cans},
                     ServingSize = 1M,
                     Calories = 140,
-                    Price = 17M,
-                    UnitQuantityForPrice = 12M
+                    Price = 17M
                 };
             }
         }

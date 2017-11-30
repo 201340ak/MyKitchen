@@ -6,10 +6,10 @@ export interface Recipe {
     cookTime?: number;
     servings?: number;
     deleted?: boolean;
-    ingredients?: RecipeFood[]
+    ingredients?: Ingredient[]
 };
 
-export interface RecipeFood {
+export interface Ingredient {
     recipeId?: number;
     foodId?: number;
     food?: Food;
@@ -20,12 +20,11 @@ export interface RecipeFood {
 export interface Food {
     id?: number;
     name?: string;
-    unit?: Unit;
+    units?: Unit[];
     servingSize?: number;
     calories?: number;
     price?: number;
     unitQuantityForPrice?: number;
-    // recipeFoods: RecipeFood[]
 };
 
 export interface Unit {
