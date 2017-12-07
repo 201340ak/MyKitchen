@@ -6,7 +6,8 @@ export interface Recipe {
     cookTime?: number;
     servings?: number;
     deleted?: boolean;
-    ingredients?: Ingredient[]
+    ingredients?: Ingredient[];
+    image?: string;
 };
 
 export interface Ingredient {
@@ -28,6 +29,6 @@ export interface Food {
 };
 
 export interface Unit {
-    // id: number;
+    id?: number;
     name?: string;
 };

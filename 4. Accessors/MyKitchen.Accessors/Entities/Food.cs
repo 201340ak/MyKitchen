@@ -9,8 +9,6 @@ namespace MyKitchen.Accessors.Entities
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        public int UnitId { get; set; }
-
         public string Name { get; set; }
 
         public decimal ServingSize { get; set; }
@@ -19,9 +17,7 @@ namespace MyKitchen.Accessors.Entities
 
         public decimal Price { get; set; }
 
-        public decimal UnitQuantityForPrice { get; set; }
-
-        public virtual ICollection<Unit> Units { get; set; }
+        public virtual ICollection<AcceptableUnit> Units { get; set; }
 
        public virtual ICollection<Ingredient> Ingredients { get; set; }
     }

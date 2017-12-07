@@ -1,6 +1,7 @@
 namespace MyKitchen.Accessors.Entities
 {
    using System;
+   using System.Text;
    using System.Linq;
 
    public partial class Recipe
@@ -20,6 +21,7 @@ namespace MyKitchen.Accessors.Entities
                 PreparationTime = entity.PreparationTime,
                 CookTime = entity.CookTime,
                 Servings = entity.Servings,
+                Image = entity.Image != null ? Encoding.ASCII.GetString(entity.Image) : null,
                 Deleted = entity.Deleted,
                 Ingredients = entity.Ingredients?
                     .Select(r => (DataContracts.Ingredient)r)
@@ -42,6 +44,7 @@ namespace MyKitchen.Accessors.Entities
                 PreparationTime = entity.PreparationTime,
                 CookTime = entity.CookTime,
                 Servings = entity.Servings,
+                Image = !string.IsNullOrEmpty(entity.Image) ? Encoding.ASCII.GetBytes(entity.Image) : null,
                 Deleted = entity.Deleted,
                 Ingredients = entity.Ingredients?
                     .Select(r => (Ingredient)r)

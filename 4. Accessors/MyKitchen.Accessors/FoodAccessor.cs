@@ -43,6 +43,7 @@ namespace MyKitchen.Accessors
 
             MyKitchenDbContext.Entry(gotFood)
             .Collection(food => food.Ingredients).Query()
+            .Include(ingredient => ingredient.Unit)
             .Include(recipeFood => recipeFood.Recipe).Load();
 
             return (DataContracts.Food)gotFood;
@@ -57,6 +58,7 @@ namespace MyKitchen.Accessors
             {
                 MyKitchenDbContext.Entry(food)
                 .Collection(f => f.Ingredients).Query()
+                .Include(ingredient => ingredient.Unit)
                 .Include(recipeFood => recipeFood.Recipe).Load();                
             }
 

@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using MyKitchen.Accessors.Contexts;
 using System;
+using System.Text;
 
 namespace MyKitchen.Accessors.Tests
 {
@@ -57,6 +58,7 @@ namespace MyKitchen.Accessors.Tests
                     Assert.AreEqual(runzaRecipe.PreparationTime, addedRecipe.PreparationTime);
                     Assert.AreEqual(runzaRecipe.CookTime, addedRecipe.CookTime);
                     Assert.AreEqual(runzaRecipe.Servings, addedRecipe.Servings);
+                    Assert.AreEqual(Encoding.ASCII.GetBytes(runzaRecipe.Image), addedRecipe.Image);
 
                     // Clean up
                     context.Database.EnsureDeleted();

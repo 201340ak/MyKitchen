@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "devDependencies": {
     "@types/history": "4.6.0",
+    "@types/node": "^8.0.55",
     "@types/react": "15.0.35",
     "@types/react-dom": "15.5.1",
     "@types/react-hot-loader": "3.0.3",
@@ -32,6 +33,9 @@
     "webpack-hot-middleware": "2.18.2"
   },
   "dependencies": {
-    "@types/jquery": "^3.2.16"
+    "@types/jquery": "^3.2.16",
+    "react-autosize-textarea": "^0.4.9",
+    "react-images-upload": "^1.1.1",
+    "react-masonry-component": "^6.0.1"
   }
 }

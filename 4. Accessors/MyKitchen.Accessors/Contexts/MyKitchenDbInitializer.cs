@@ -25,6 +25,10 @@ namespace MyKitchen.Accessors.Contexts
             context.Food.AddRange(InitializeData.Foods.All);
             context.SaveChanges();
 
+            // Add AcceptableUnits
+            context.AcceptableUnits.AddRange(InitializeData.AcceptableUnits.All);
+            context.SaveChanges();
+
             // Add Recipes
             context.Recipes.AddRange(InitializeData.Recipes.All);
             context.SaveChanges();

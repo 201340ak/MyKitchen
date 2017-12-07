@@ -27,6 +27,8 @@ namespace MyKitchen.Accessors.Contexts
         
         public DbSet<Instruction> Instructions { get; set; }
 
+        public DbSet<AcceptableUnit> AcceptableUnits { get; set; }
+
         public DbSet<List> Lists { get; set; }
     }
 }

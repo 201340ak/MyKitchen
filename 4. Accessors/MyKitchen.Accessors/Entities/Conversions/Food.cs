@@ -17,14 +17,14 @@ namespace MyKitchen.Accessors.Entities
                 Id = entity.Id,
                 Name = entity.Name,
                 Units = entity.Units?
-                    .Select(r => (DataContracts.Unit)r)
+                    .Select(r => (DataContracts.Unit)r.Unit)
                     .ToList(),
                 ServingSize = entity.ServingSize,
                 Calories = entity.Calories,
                 Price = entity.Price,
                 Ingredients = entity.Ingredients?
                     .Select(r => (DataContracts.Ingredient)r)
-                    .ToList()
+                    .ToList(),
             };
         }
 
@@ -40,7 +40,11 @@ namespace MyKitchen.Accessors.Entities
                 Id = entity.Id,
                 Name = entity.Name,
                 Units = entity.Units?
-                    .Select(r => (Unit)r)
+                    .Select(r => new AcceptableUnit{
+                        Unit = (Unit)r,
+                        UnitId = r.Id,
+                        FoodId = entity.Id
+                    })
                     .ToList(),
                 ServingSize = entity.ServingSize,
                 Calories = entity.Calories,

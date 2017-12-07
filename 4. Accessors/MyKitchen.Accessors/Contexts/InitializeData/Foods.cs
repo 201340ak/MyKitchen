@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using MyKitchen.Accessors.Entities;
+using System.Linq;
 
 namespace MyKitchen.Accessors.Contexts.InitializeData
 {
@@ -9,7 +10,7 @@ namespace MyKitchen.Accessors.Contexts.InitializeData
         {
             get 
             {
-                return new List<Food>
+                var foods = new List<Food>
                 {
                     Hamburger,
                     PillsburyCrescentRolls,
@@ -17,7 +18,8 @@ namespace MyKitchen.Accessors.Contexts.InitializeData
                     RedOnion,
                     FrenchFries,
                     Cola
-                };
+                }; 
+                return foods;
             }
         }
 
@@ -28,11 +30,9 @@ namespace MyKitchen.Accessors.Contexts.InitializeData
                 return new Food
                 {
                     Name = "Hamburger",
-                    UnitId = 1, // Pound
                     ServingSize = 0.25M,
                     Calories = 260,
-                    Price = 3.84M,
-                    UnitQuantityForPrice = 1
+                    Price = 3.84M
                 };
             }
         }
@@ -44,11 +44,9 @@ namespace MyKitchen.Accessors.Contexts.InitializeData
                 return new Food
                 {
                     Name = "Pillsbury Crescent Rolls",
-                    UnitId = 2, // Rolls
                     ServingSize = 0.25M,
                     Calories = 100,
-                    Price = 2.18M,
-                    UnitQuantityForPrice = 8
+                    Price = 2.18M
                 };
             }
         }
@@ -60,11 +58,9 @@ namespace MyKitchen.Accessors.Contexts.InitializeData
                 return new Food
                 {
                     Name = "BBQ Sauce",
-                    UnitId = 3, // Ounces
                     ServingSize = 1M,
                     Calories = 54,
-                    Price = 2.64M,
-                    UnitQuantityForPrice = 28
+                    Price = 2.64M
                 };
             }
         }
@@ -76,11 +72,9 @@ namespace MyKitchen.Accessors.Contexts.InitializeData
                 return new Food
                 {
                     Name = "Red Onion",
-                    UnitId = 3, // Ounces
                     ServingSize = 5M,
                     Calories = 64,
-                    Price = 1.32M,
-                    UnitQuantityForPrice = 0.3125M
+                    Price = 1.32M
                 };
             }
         }
@@ -92,11 +86,9 @@ namespace MyKitchen.Accessors.Contexts.InitializeData
                 return new Food
                 {
                     Name = "Frozen French Fries",
-                    UnitId = 3, // Ounces
                     ServingSize = 3M,
                     Calories = 130,
-                    Price = 2.89M,
-                    UnitQuantityForPrice = 30M
+                    Price = 2.89M
                 };
             }
         }
@@ -108,11 +100,9 @@ namespace MyKitchen.Accessors.Contexts.InitializeData
                 return new Food
                 {
                     Name = "Cola",
-                    UnitId = 4, // Cans
                     ServingSize = 1M,
                     Calories = 140,
-                    Price = 17M,
-                    UnitQuantityForPrice = 12M
+                    Price = 17M
                 };
             }
         }

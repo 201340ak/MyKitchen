@@ -19,6 +19,8 @@ namespace MyKitchen.DataContracts
 
        public bool Deleted { get; set; }
 
+       public string Image { get; set; }
+
        public ICollection<Ingredient> Ingredients { get; set; }
    }
 }

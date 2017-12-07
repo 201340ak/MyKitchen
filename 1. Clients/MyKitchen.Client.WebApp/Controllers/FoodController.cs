@@ -25,6 +25,7 @@ namespace MyKitchen_Client_WebApp.Controllers
         [HttpGet("[action]")]
         public IEnumerable<Food> GetAll()
         {
+            var foods = Manager.GetAll();
             return Manager.GetAll();
         }
 

@@ -21,6 +21,8 @@ namespace MyKitchen.Accessors.Entities
 
        public bool Deleted { get; set; }
 
+       public byte[] Image { get; set; }
+
        public virtual ICollection<Ingredient> Ingredients { get; set; }
 
        public virtual ICollection<Instruction> Instructions { get; set; }

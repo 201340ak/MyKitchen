@@ -20,6 +20,7 @@ namespace MyKitchen.Accessors
         {
             var recipeToAdd = (Entities.Recipe)recipe;
             GetFoodFromContext(recipeToAdd.Ingredients.ToList());
+            GetUnitFromContext(recipeToAdd.Ingredients.ToList());
             var addedRecipe = MyKitchenDbContext.Recipes.Add(recipeToAdd).Entity;
             MyKitchenDbContext.SaveChanges();
             return (DataContracts.Recipe)addedRecipe;
@@ -43,8 +44,9 @@ namespace MyKitchen.Accessors
 
         public List<DataContracts.Recipe> GetAll()
         {
+            MyKitchenDbContext.Recipes.Include(r => r.Ingredients).Load();
             var recipes = MyKitchenDbContext.Recipes.Where(recipe => !recipe.Deleted);
-
+            recipes.Include(r => r.Ingredients);
             foreach(Entities.Recipe recipe in recipes)
             {
                 MyKitchenDbContext.Entry(recipe)
@@ -83,7 +85,7 @@ namespace MyKitchen.Accessors
             foreach(Entities.Ingredient recipeFood in recipeFoods)
             {
                 var foodId = recipeFood.FoodId != 0 ? recipeFood.FoodId : recipeFood.Food.Id;
-                var foodFromContext = recipeFood?.FoodId != null ? MyKitchenDbContext.Food.FirstOrDefault(food => food.Id == recipeFood.FoodId) : null;
+                var foodFromContext = MyKitchenDbContext.Food.FirstOrDefault(food => food.Id == foodId);
                 if(foodFromContext == null)
                 {
                     // TODO: Decide how to actually handle this scenerio..
@@ -92,6 +94,28 @@ namespace MyKitchen.Accessors
                 }
 
                 recipeFood.Food = foodFromContext;
+            }
+        }
+
+        private void GetUnitFromContext(List<Entities.Ingredient> recipeFoods)
+        {
+            if(recipeFoods == null)
+            {
+                return;
+            }
+
+            foreach(Entities.Ingredient recipeFood in recipeFoods)
+            {
+                var unitId = recipeFood.UnitId != 0 ? recipeFood.UnitId : recipeFood.Unit.Id;
+                var unitFromContext = MyKitchenDbContext.Units.FirstOrDefault(unit => unit.Id == unitId);
+                if(unitFromContext == null)
+                {
+                    // TODO: Decide how to actually handle this scenerio..
+                    MyKitchenDbContext.Units.Add(recipeFood.Unit);
+                    // throw new Exception($"Food {recipeFood?.Food?.Name} with id {recipeFood.FoodId} does not exist. Please use existing Food Item");
+                }
+
+                recipeFood.Unit = unitFromContext;
             }
         }
     }

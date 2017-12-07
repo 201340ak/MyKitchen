@@ -10,11 +10,15 @@ namespace MyKitchen.Accessors.Entities
             {
                 return null;
             }
+            DataContracts.UnitType unitType;
+            var parsed = DataContracts.UnitType.TryParse(entity.Type.ToString(), out unitType);
 
             return new DataContracts.Unit
             {
                 Id = entity.Id,
-                Name = entity.Name
+                Name = entity.Name,
+                Abbreviation = entity.Abbreviation,
+                Type = parsed ? unitType : (DataContracts.UnitType?)null
             };
         }
 
@@ -25,10 +29,15 @@ namespace MyKitchen.Accessors.Entities
                 return null;
             }
 
+            UnitType unitType;
+            var parsed = UnitType.TryParse(entity.Type.ToString(), out unitType);
+
             return new Unit
             {
                 Id = entity.Id,
-                Name = entity.Name
+                Name = entity.Name,
+                Abbreviation = entity.Abbreviation,
+                Type = parsed ? unitType : (UnitType?)null
             };
         }
    }

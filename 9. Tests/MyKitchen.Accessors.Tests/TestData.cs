@@ -1,6 +1,7 @@
 namespace MyKitchen.Accessors.Tests
 {
     using System.Collections.Generic;
+    using System.Text;
 
     public static class TestData
     {        
@@ -15,6 +16,7 @@ namespace MyKitchen.Accessors.Tests
                     PreparationTime = 5,
                     CookTime = 20,
                     Servings = 4,
+                    Image = "Image.png",
                     Ingredients = new List<DataContracts.Ingredient>(){
                         new DataContracts.Ingredient
                         {

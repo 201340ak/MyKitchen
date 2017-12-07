@@ -3,17 +3,11 @@ import * as React from 'react';
 import { RouteComponentProps } from 'react-router';
 import 'isomorphic-fetch';
 import { Recipe, Food, Ingredient } from "../MyKitchenInterfaces";
+import { AnimatedForm } from "./AnimatedForm";
 
 interface AddRecipeCardState{
     recipeToAdd: Recipe;
     addRecipeForm?: JSX.Element;
-    showForm: boolean;
-}
-
-export interface AddRecipeCardProps
-{
-    helloWorld: string;
-    selectedFood: FoodQuantity[];
     showForm: boolean;
 }
 
@@ -27,7 +21,7 @@ export class AddRecipeCardComponent extends React.Component<RouteComponentProps<
         let addCardShow = !this.state.showForm ?
             <button className="btn glyphicon glyphicon-plus add-recipe" name="add-recipe" onClick={e => this.ShowForm()} /> :
             this.GetAddRecipeCard([])
-        return addCardShow;
+        return <AnimatedForm />;
     }
 
     private ShowForm()
@@ -51,15 +45,16 @@ export class AddRecipeCardComponent extends React.Component<RouteComponentProps<
 
     public GetAddRecipeCard(selectedFood: FoodQuantity[])
     {
-         var listComponent = <FoodListComponent selectedFoodQuantity={selectedFood} getSelectedFoodsCallBack={this.GetSelectedFoodsCallBack.bind(this)} />;
-        let card = <div className="add-recipe-card form-group" id="add-recipe-card">
+         var listComponent = <FoodListComponent getSelectedFoodsCallBack={this.GetSelectedFoodsCallBack.bind(this)} />;
+        let card = <div><h3>Add your recipe:</h3> <div className="add-recipe-card form-group" id="add-recipe-card">
+        
             <input className="recipe-title form-control" placeholder="Title of Recipe" onChange={ e => this.UpdateRecipeTitle(e)} />
             <textarea className="recipe-description form-control" rows={2} placeholder="Description of Recipe" onChange={ e => this.UpdateRecipeDescription(e)} />
             <div className="row">
                 <div className="col-sm-4">
-                    <input type="number" min="0" className="recipe-prep-time form-control" placeholder="Preparation Time (minutes)" onChange={ e => this.UpdateRecipePrepTime(e)} />
-                    <input type="number" min="0" className="recipe-cook-time form-control" placeholder="Cook Time (minutes)" onChange={ e => this.UpdateRecipeCookTime(e)} />
-                    <input type="number" min="0" className="recipe-serving form-control" placeholder="Servings Yielded" onChange={ e => this.UpdateRecipeServings(e)} />
+                    <input type="number" min="0" className="recipe-prep-time form-control add-recipe-input" placeholder="Preparation Time (minutes)" onChange={ e => this.UpdateRecipePrepTime(e)} />
+                    <input type="number" min="0" className="recipe-cook-time form-control add-recipe-input" placeholder="Cook Time (minutes)" onChange={ e => this.UpdateRecipeCookTime(e)} />
+                    <input type="number" min="0" className="recipe-serving form-control add-recipe-input" placeholder="Servings Yielded" onChange={ e => this.UpdateRecipeServings(e)} />
                 </div>
                 <div className="col-sm-8">
                      { listComponent }
@@ -69,6 +64,7 @@ export class AddRecipeCardComponent extends React.Component<RouteComponentProps<
                 <button id="cancel-recipe" className="btn" name="cancel-recipe-btn" onClick= { e => this.CloseAddRecipeCard() }>Cancel</button>
                 <button id="save-recipe" className="btn" onClick= {e => this.SaveRecipe()}>Save Recipe</button>
             </div>
+        </div>
         </div>;
 
         return card;
