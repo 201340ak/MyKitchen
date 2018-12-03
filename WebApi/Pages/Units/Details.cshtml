@@ -1,0 +1,42 @@
+@page
+@model MyKitchen.Pages.Units.DetailsModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+
+<div>
+    <h4>Unit</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Unit.SingularName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Unit.SingularName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Unit.PluralName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Unit.PluralName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Unit.Abbreviation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Unit.Abbreviation)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Unit.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
+</body>
+</html>

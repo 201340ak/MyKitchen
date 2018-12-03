@@ -1,0 +1,43 @@
+@page
+@model MyKitchen.Pages.Users.DetailsModel
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+
+<div>
+    <h4>User</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.User.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.User.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.User.DisplayName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.User.DisplayName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.User.Password)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.User.Password)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.User.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
+</body>
+</html>

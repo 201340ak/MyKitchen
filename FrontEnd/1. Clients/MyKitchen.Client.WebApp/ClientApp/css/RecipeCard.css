@@ -1,0 +1,60 @@
+.real-recipe-card
+{
+    /* width: 33%; */
+    padding: 4px;
+}
+
+.real-recipe-card>img{
+    width: 100%;
+    border-radius: .1em .1em 0 0;
+}
+
+.recipe-card-data
+{
+    background-color: #212121;
+    border-radius: 0 0 .1em .1em;
+    padding: 4px;
+    padding-top: 2px;
+    padding-left: 12px;
+}
+
+.title
+{
+    color: #FFA500;
+    padding-top: 0;
+    padding-bottom: 2px;
+    margin: 0;
+    display: inline;
+}
+
+.description
+{
+    padding-left: 4px;
+    font-size: .8em;
+}
+
+.recipe-data-header
+{
+    display: inline-block;
+    padding-top: 8px;
+}
+
+.recipe-time, .servings
+{
+    font-size: .7em;
+    opacity: .75;
+    color: #9b9b9b;
+}
+
+.recipe-time>.glyphicon
+{
+    padding-right: 2px;
+}
+
+.ingredients
+{
+    font-size: .65em !important;
+    color: white;
+    padding: 2px;
+    opacity: .8;
+}

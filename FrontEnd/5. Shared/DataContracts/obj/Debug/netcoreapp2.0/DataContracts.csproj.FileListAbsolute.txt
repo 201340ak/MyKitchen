@@ -1,0 +1,8 @@
+c:\Users\al3238\Desktop\Stuff\MyKitchen\App\5. Shared\DataContracts\bin\Debug\netcoreapp2.0\DataContracts.deps.json
+c:\Users\al3238\Desktop\Stuff\MyKitchen\App\5. Shared\DataContracts\bin\Debug\netcoreapp2.0\DataContracts.dll
+c:\Users\al3238\Desktop\Stuff\MyKitchen\App\5. Shared\DataContracts\bin\Debug\netcoreapp2.0\DataContracts.pdb
+c:\Users\al3238\Desktop\Stuff\MyKitchen\App\5. Shared\DataContracts\obj\Debug\netcoreapp2.0\DataContracts.csproj.CoreCompileInputs.cache
+c:\Users\al3238\Desktop\Stuff\MyKitchen\App\5. Shared\DataContracts\obj\Debug\netcoreapp2.0\DataContracts.AssemblyInfoInputs.cache
+c:\Users\al3238\Desktop\Stuff\MyKitchen\App\5. Shared\DataContracts\obj\Debug\netcoreapp2.0\DataContracts.AssemblyInfo.cs
+c:\Users\al3238\Desktop\Stuff\MyKitchen\App\5. Shared\DataContracts\obj\Debug\netcoreapp2.0\DataContracts.dll
+c:\Users\al3238\Desktop\Stuff\MyKitchen\App\5. Shared\DataContracts\obj\Debug\netcoreapp2.0\DataContracts.pdb

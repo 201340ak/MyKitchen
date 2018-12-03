@@ -1,0 +1,46 @@
+@page
+@model MyKitchen.Pages.Ingredients.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Ingredient</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Ingredient.Food" class="control-label"></label>
+                <select asp-for="Ingredient.FoodId" class ="form-control" asp-items="ViewBag.Foods"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ingredient.Quantity" class="control-label"></label>
+                <input asp-for="Ingredient.Quantity" class="form-control" />
+                <span asp-validation-for="Ingredient.Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ingredient.SelectedUnit" class="control-label"></label>
+                <select asp-for="Ingredient.SelectedUnitId" class ="form-control" asp-items="ViewBag.SelectedUnits"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ingredient.Recipe" class="control-label"></label>
+                <select asp-for="Ingredient.RecipeId" class ="form-control" asp-items="ViewBag.Recipes"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

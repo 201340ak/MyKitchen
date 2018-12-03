@@ -1,0 +1,56 @@
+@page
+@model MyKitchen.Pages.InventoryEntries.EditModel
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+
+<h4>InventoryEntry</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="InventoryEntry.Id" />
+            <div class="form-group">
+                <label asp-for="InventoryEntry.User" class="control-label"></label>
+                <select asp-for="InventoryEntry.UserId" class="form-control" asp-items="ViewBag.Users"></select>
+                <span asp-validation-for="InventoryEntry.UserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InventoryEntry.Food" class="control-label"></label>
+                <select asp-for="InventoryEntry.FoodId" class="form-control" asp-items="ViewBag.Foods"></select>
+                <span asp-validation-for="InventoryEntry.FoodId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InventoryEntry.Quantity" class="control-label"></label>
+                <input asp-for="InventoryEntry.Quantity" class="form-control" />
+                <span asp-validation-for="InventoryEntry.Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InventoryEntry.SelectedUnit" class="control-label"></label>
+                <select asp-for="InventoryEntry.SelectedUnitId" class ="form-control" asp-items="ViewBag.Units"></select>
+                <span asp-validation-for="InventoryEntry.SelectedUnitId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+</body>
+</html>

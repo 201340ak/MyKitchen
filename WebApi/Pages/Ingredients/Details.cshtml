@@ -1,0 +1,43 @@
+@page
+@model MyKitchen.Pages.Ingredients.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ingredient</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ingredient.Food)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ingredient.Food.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ingredient.Quantity)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ingredient.Quantity)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ingredient.SelectedUnit)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ingredient.SelectedUnit.SingularName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ingredient.Recipe)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ingredient.Recipe.Name)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Ingredient.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

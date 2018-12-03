@@ -1,0 +1,53 @@
+@page
+@model MyKitchen.Pages.Units.IndexModel
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Unit[0].SingularName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Unit[0].PluralName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Unit[0].Abbreviation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Unit) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SingularName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PluralName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Abbreviation)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>

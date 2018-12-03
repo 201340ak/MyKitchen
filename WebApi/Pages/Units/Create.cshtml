@@ -1,0 +1,50 @@
+@page
+@model MyKitchen.Pages.Units.CreateModel
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+
+<h4>Unit</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Unit.SingularName" class="control-label"></label>
+                <input asp-for="Unit.SingularName" class="form-control" />
+                <span asp-validation-for="Unit.SingularName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Unit.PluralName" class="control-label"></label>
+                <input asp-for="Unit.PluralName" class="form-control" />
+                <span asp-validation-for="Unit.PluralName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Unit.Abbreviation" class="control-label"></label>
+                <input asp-for="Unit.Abbreviation" class="form-control" />
+                <span asp-validation-for="Unit.Abbreviation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+</body>
+</html>
